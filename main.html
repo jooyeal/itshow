@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <div class="form-popup" id="enterForm">
+            <form action="#">
+                <h1>Enter to</h1>
+                <input type="text" placeholder="Enter room number" name="roomNumber">
+                <input type="password" placeholder="Enter room password" name="roomPassword">
+                <button type="submit" class="btn">Enter</button>
+                <button type="submit" class="btn enter-cancel" id="enterCancel">Close</button>
+            </form>
+        </div>
+        <div class=" form-popup" id="createForm">
+            <form action="#">
+                <h1>Create to</h1>
+                <input type="text" placeholder="create room number" name="roomNumber">
+                <input type="password" placeholder="create room password" name="roomPassword">
+                <button type="submit" class="btn">Create</button>
+                <button type="submit" class="btn close-cancel" id="closeCancel">Close</button>
+            </form>
+        </div>
+        <div class="main-wrap">
+            <div class="main-top">
+                <div class="main-top__title">
+                    <h1 class="main__text">Title</h1>
+                </div>
+            </div>
+            <div class="main-bottom">
+                <div class="main-bottom__go">
+                    <div class="main__text" id="enterText">go to project</div>
+                </div>
+                <div class="main-bottom__create">
+                    <div href="" class="main__text" id="createText">create to project</div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="enterform.js"></script>
+</body>
+
+</html>
