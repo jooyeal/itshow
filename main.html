@@ -20,12 +20,22 @@
             </form>
         </div>
         <div class=" form-popup" id="createForm">
+
             <form action="#">
-                <h1>Create to</h1>
-                <input type="text" placeholder="create room number" name="roomNumber">
-                <input type="password" placeholder="create room password" name="roomPassword">
-                <button type="submit" class="btn">Create</button>
-                <button type="submit" class="btn close-cancel" id="closeCancel">Close</button>
+                <div class="form-popup__create-form">
+                    <div class="form-popup__create-form__left">
+                        <h1>Create to</h1>
+                    </div>
+                    <div class="form-popup__create-form__right">
+                        <input type="text" placeholder="create room number" name="roomNumber">
+                        <input type="password" placeholder="create room password" name="roomPassword">
+                        <select name="" id="">
+                            <option value="">option</option>
+                        </select>
+                        <button type="submit" class="btn">Create</button>
+                        <button type="submit" class="btn close-cancel" id="closeCancel">Close</button>
+                    </div>
+                </div>
             </form>
         </div>
         <div class="main-wrap">
@@ -36,10 +46,10 @@
             </div>
             <div class="main-bottom">
                 <div class="main-bottom__go">
-                    <div class="main__text" id="enterText">go to project</div>
+                    <div class="main__text main__text__bottom" id="enterText">go to project</div>
                 </div>
                 <div class="main-bottom__create">
-                    <div href="" class="main__text" id="createText">create to project</div>
+                    <div class="main__text main__text__bottom" id="createText">create to project</div>
                 </div>
             </div>
         </div>
