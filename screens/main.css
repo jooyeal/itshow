@@ -1,0 +1,55 @@
+body {
+    height: 100vh;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.main-top {
+    width: 100%;
+    height: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-top__title {
+    width: 50%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-bottom {
+    width: 100%;
+    height: 50%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-bottom__go,
+.main-bottom__create {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-bottom__go {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.main__text {
+    font-size: 50px;
+    font-weight: 800;
+    color: white;
+}
