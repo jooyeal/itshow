@@ -1,0 +1,87 @@
+@import "reset.css";
+
+.header {
+    position: absolute;
+    height: 100%;
+    width:100%;
+    background-color: #B2B2B2;
+}
+
+
+.content {    
+    margin-top: 40px;
+}
+
+.content {
+    position: absolute;
+    left:50%;
+    width:250px;
+    transform:translate(-50%);
+}
+
+.IT_SHOW {
+    text-align: center;
+    font-size: 40px;
+    margin-top:50px;
+}
+
+h3 {
+    margin: 19px 0 8px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.box, #mm {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 29px;
+    border:none;
+    background-color: #fff;
+    font-size:15px;
+}
+
+.int {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 29px;
+    border:none;
+    background-color: #fff;
+    font-size:15px;
+}
+
+.birth_wrap{
+    display:tabel;
+    width:100%;
+}
+
+.bir_yy {
+    display: table-cell;
+    width:147px;
+}
+
+.bir_mm {
+    display: table-cell;
+    width:147px;
+    vertical-align: middle;
+}
+
+.bir_dd {
+    display: table-cell;
+    width:147px;
+}
+
+.bir_mm, .bir_dd {
+    padding-left:10px;
+}
+
+.btn_area {
+    margin: 30px 0 91px;
+}
+
+.btn_click {
+    width:100%;
+    font-size:25px;
+    font-weight: 400;
+}
