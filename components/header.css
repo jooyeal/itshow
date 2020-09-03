@@ -1,0 +1,25 @@
+header {
+    width: 100%;
+    height: 6.5%;
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.project-top {
+    width: 33.3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3em;
+    font-weight: 600;
+}
+
+.project-top__logo {
+    justify-content: flex-start;
+    margin-left: 5%;
+}
+
+.project-top__profile {
+    justify-content: flex-end;
+    margin-right: 5%;
+}
