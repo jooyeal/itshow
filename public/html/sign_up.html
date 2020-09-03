@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+
+    <title>Sign up</title>
+</head>
+
+<body>
+    <div class="header">
+        <div class="wrap">
+            <h1 class="IT_SHOW">IT SHOW</h1>
+            <div class="content">
+
+                <h3>
+                    <label for="id">ID</label>
+                </h3>
+                <span class="box id">
+                    <input type="text" id="id" class="int" maxlength="20">
+                </span>
+                <span class="error_box_id"></span>
+
+                <h3>
+                    <label for="password">PASSWORD</label>
+                </h3>
+                <span class="box password">
+                    <input type="password" id="password" class="int" maxlength="25">
+                </span>
+                <span class="error_box_password"></span>
+
+                <h3>
+                    <label for="password_confirm">PASSWORD CONFIRM</label>
+                </h3>
+                <span class="box password_confirm">
+                    <input type="password" id="password_confirm" class="int" maxlength="25">
+                </span>
+
+                <h3>
+                    <label for="name">Name</label>
+                </h3>
+                <span class="box">
+                    <input type="text" id="name" class="int">
+                </span>
+
+                <h3>
+                    <label for="e-mail">E-mail</label>
+                </h3>
+                <span class="box">
+                    <input type="text" id="email" class="int" maxlength="40">
+                </span>
+
+
+                <h3>
+                    <label for="dateOfbirth">date of birth</label>
+                </h3>
+                <div class="birth_wrap">
+                    <div class="bir_yy">
+                        <span class="box">
+                            <input type="text" id="yy" class="int" maxlength="4" placeholder="year(4)">
+                        </span>
+                    </div>
+
+                    <div class="bir_mm">
+                        <span class="box">
+                            <select id="mm">
+                                <option>month</option>
+                                <option value="01">1</option>
+                                <option value="02">2</option>
+                                <option value="03">3</option>
+                                <option value="04">4</option>
+                                <option value="05">5</option>
+                                <option value="06">6</option>
+                                <option value="07">7</option>
+                                <option value="08">8</option>
+                                <option value="09">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                            </select>
+                        </span>
+                    </div>
+
+                    <div class="bir_dd">
+                        <span class="box">
+                            <input type="text" id="dd" class="int" maxlength="2" placeholder="Day">
+                        </span>
+                    </div>
+                </div>
+                <span class="error_next_box"></span>
+
+                <h3>
+                    <label for="phone_number">Phone number</label>
+                </h3>
+                <span class="box">
+                    <input type="text" id="phone_number" class="int" maxlength="20">
+                </span>
+
+                <div class="btn_area">
+                    <input type="submit" value="submit" name="" id="">
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

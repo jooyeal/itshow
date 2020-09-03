@@ -1,24 +1,14 @@
-const http = require("http");
-const url = require("url");
-const qs = require("querystring");
-const template = require("./lib/template.js");
-
-const app = http.createServer(function (request, response) {
-    const _url = request.url;
-    const queryData = url.parse(_url, true).query;
-    const pathName = url.parse(_url, true).pathname;
-    const html = template.html();
-    if (pathName === "/") {
-        response.writeHead(200);
-        response.end(html);
-    } else if (pathName === "/style.css") {
-        response.writeHead(200);
-        response.end();
-    } else {
-        response.writeHead(404);
-        response.end();
-    }
-
+const express = require('express');
+const path = require('path');
+const app = express();
+app.use(express.static(path.join(__dirname, 'public')));
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/html', 'index.html'));
 });
 
-app.listen(3000);
+app.get('/signup', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/html', 'sign_up.html'));
+});
+app.listen(3000, () => {
+    console.log('Express App on port 3000!');
+});
