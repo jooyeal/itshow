@@ -1,0 +1,14 @@
+@import "/stylesheets/reset.css";
+
+/*screens css*/
+@import "/stylesheets/screens/main.css";
+@import "/stylesheets/screens/login_form.css";
+@import "/stylesheets/screens/sign_up.css";
+
+/*components css*/
+@import "/stylesheets/components/header.css";
+
+body {
+    height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
