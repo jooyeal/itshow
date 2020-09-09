@@ -1,18 +1,25 @@
 const express = require('express');
 const app = express();
+const session = require('express-session');
 const db = require('./lib/db.js');
-const bodyParser = require('body-parser');
+const USER_LS = 'currentUser';
+
 
 db.connect();
 
 app.use(express.static('public'));
-app.use(bodyParser.urlencoded({
+app.use(express.json());
+app.use(express.urlencoded({
     extended: false
 }));
+app.use(session({
+    secret: 'a98yhfi&o2u3bn0(rfuw-gvjoiah3@0945u23r#',
+    resave: false,
+    saveUninitialized: true
+}));
+
 app.set('view engine', 'pug');
 app.set('views', './views');
-
-
 
 app.get('/', (req, res) => {
     res.render('index');
@@ -21,16 +28,31 @@ app.get('/', (req, res) => {
 app.get('/sign_up', (req, res) => {
     res.render('sign-up');
 });
+
 app.get('/main', (req, res) => {
-    res.render('main');
+    const currentUser = req.session.userId;
+    if (currentUser !== undefined) {
+        res.render('main');
+    } else {
+        res.send('do not permitted');
+    }
 });
+
+app.get('/logout', (req, res) => {
+    delete req.session.userId;
+    res.redirect('/');
+})
+
 
 app.post('/main', (req, res) => {
     const userId = req.body.userId;
     const userPw = req.body.userPw;
     db.query(`select * from member where id = ${userId} and password = ${userPw}`, (err, rows) => {
-        if (err) throw err;
+        if (err) {
+            throw err;
+        }
         if (rows[0] !== undefined) {
+            req.session.userId = userId;
             res.render('main');
         } else {
             res.send('no data');

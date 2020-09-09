@@ -16,11 +16,10 @@
                 <input type="text" placeholder="Enter room number" name="roomNumber">
                 <input type="password" placeholder="Enter room password" name="roomPassword">
                 <button type="submit" class="btn">Enter</button>
-                <a href="/main">close</a>
             </form>
+            <button class="btn enter-cancel" id="enterCancel">close</button>
         </div>
         <div class=" form-popup" id="createForm">
-
             <form method='POST'>
                 <div class="form-popup__create-form">
                     <div class="form-popup__create-form__left">
@@ -33,16 +32,17 @@
                             <option value="">option</option>
                         </select>
                         <button type="submit" class="btn">Create</button>
-                        <a href="/main">close</a>
                     </div>
                 </div>
             </form>
+            <button class="btn create-cancel" id="createCancel">close</button>
         </div>
         <div class="main-wrap">
             <div class="main-top">
                 <div class="main-top__title">
                     <h1 class="main__text">Title</h1>
                 </div>
+                <a href="/logout">logout</a>
             </div>
             <div class="main-bottom">
                 <div class="main-bottom__go">
@@ -55,6 +55,7 @@
         </div>
     </main>
     <script src="../enterform.js"></script>
+
 </body>
 
 </html>

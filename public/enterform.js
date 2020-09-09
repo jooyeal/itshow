@@ -4,7 +4,7 @@ const enterForm = document.getElementById("enterForm");
 const createForm = document.getElementById("createForm");
 const enterText = document.getElementById("enterText");
 const createText = document.getElementById("createText");
-const closebtn = document.querySelectorAll(".enter-cancel, .close-cancel");
+const closebtn = document.querySelectorAll(".enter-cancel, .create-cancel");
 
 function openForm(event) {
     const target = event.target
@@ -20,8 +20,7 @@ function openForm(event) {
 
 function closeForm(event) {
     const target = event.target
-
-    if (target.id === 'enterCancel') {
+    if (target.id === "enterCancel") {
         mainWrap.style.display = "block";
         main.style.backgroundColor = "";
         enterForm.style.display = "none";
@@ -37,7 +36,6 @@ function init() {
     createText.addEventListener("click", openForm);
     closebtn[0].addEventListener("click", closeForm);
     closebtn[1].addEventListener("click", closeForm);
-
 }
 
 init();
