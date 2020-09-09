@@ -2,7 +2,6 @@ const express = require('express');
 const app = express();
 const session = require('express-session');
 const db = require('./lib/db.js');
-const USER_LS = 'currentUser';
 
 
 db.connect();
