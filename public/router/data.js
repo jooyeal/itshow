@@ -1,7 +1,14 @@
 const express = require('express');
 const session = require('express-session');
 const router = express.Router();
+const querystring = require('query-string');
 const db = require('../lib/db.js');
+const {
+    v4: uuidv4
+} = require('uuid');
+
+let idValue = '';
+
 db.connect();
 
 router.use(express.static('public'));
@@ -37,7 +44,19 @@ router.get('/main', (req, res) => {
 router.get('/logout', (req, res) => {
     delete req.session.userId;
     res.redirect('/');
-})
+});
+
+router.get('/room/:id', (req, res) => {
+    console.log(idValue);
+    res.render('success-sign-up');
+});
+
+router.post('/room', (req, res) => {
+    idValue = uuidv4();
+    res.redirect(`/room/:id=${idValue}`);
+});
+
+
 
 router.post('/main', (req, res) => {
     const userId = req.body.userId;
