@@ -1,0 +1,14 @@
+doctype html
+html
+    head
+        meta(charset='UTF-8')
+        link(rel="stylesheet" href="../stylesheets/style.css")
+        title
+    body
+        p entered room list
+        p --------------------------------------
+        ul
+            each val in rows
+                li
+                    a(href=`/room/:id=${val.enteredRoomId}`) !{val.enteredRoomId}  
+                
