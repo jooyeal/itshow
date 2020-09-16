@@ -4,6 +4,7 @@
 @import "/stylesheets/screens/main.css";
 @import "/stylesheets/screens/login_form.css";
 @import "/stylesheets/screens/sign_up.css";
+@import "/stylesheets/screens/chat.css";
 
 /*components css*/
 @import "/stylesheets/components/header.css";
