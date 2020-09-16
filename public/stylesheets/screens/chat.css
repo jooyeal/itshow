@@ -1,52 +1,77 @@
-#chat-main {
-    margin: auto;
-    margin-top: 100px;
-    border-radius: 20px;
-    background-color: lightblue;
-    text-align: center;
-    width: 500px;
-    height: 800px;
-  }
-  
-  /* 채팅 영역 */
-  #chat {
-    height: 90%;
-    width: 100%;
-    overflow-y: auto;
-  }
-  
-  /* 접속 알림 */
-  .connect {
-    width: 90%;
-    margin: auto;
-    background-color: aquamarine;
-    text-align: center;
-    margin-top: 10px;
-  }
-  
-  /* 접속 종료 알림 */
-  .disconnect {
-    width: 90%;
-    margin: auto;
-    background-color: indianred;
-    text-align: center;
-    margin-top: 10px;
-  }
-  
-  /* 내가 보낸 메시지 */
-  .me {
-    width: 90%;
-    margin: auto;
-    background-color: lemonchiffon;
-    border-radius: 5px;
-    margin-top: 10px;
-  }
-  
-  /* 상대방이 보낸 메시지 */
-  .other {
-    width: 90%;
-    margin: auto;
-    background-color: white;
-    border-radius: 5px;
-    margin-top: 10px;
-  }
+.wrap ,html, body {
+  width:100%;
+  height:100%;
+  padding: 0;
+  margin: 0;
+}
+
+.wrap {
+  display: flex;
+}
+.side_bar {  
+  width: 18%;  
+}
+
+.screen {  
+  width: 60%;
+  background-color: green;;
+}
+
+.chat {  
+  width: 22%;  
+}
+
+
+
+
+.main_logo {
+  width: 100%;
+  height: 20%;
+  background-color: white;
+}
+
+.main_menu {
+  width: 100%;
+  height: 10%;
+  background-color: gray;
+}
+
+.profile{
+  width: 100%;
+  height: 10%;
+  background-color: yellowgreen;
+}
+
+.logout {
+  width:100%;
+  height: 10%;
+  background-color: royalblue;
+}
+
+.access_list{
+  width: 100%;
+  height: 50%;
+  background-color: goldenrod;
+}
+
+.chat_message {
+  width:100%;
+  height:100%;
+}
+
+.live_chat {
+  width: 100%;
+  height:8%;
+  background-color: goldenrod;
+}
+
+.live_chat_text {
+  width:100%;
+  height:80%;
+  background-color: gray;
+}
+
+.input_line__ {
+  width: 97%;
+  height: 45px;
+}
