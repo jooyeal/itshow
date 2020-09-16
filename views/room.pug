@@ -1,62 +1,83 @@
 doctype html
-html
-    head
-        meta(charset='UTF-8')
-        link(rel="stylesheet" href="../stylesheets/style.css")
-        title
-    body
-        input(id = "url" value = room)
-        button 
+head
+  meta(charset='UTF-8')
+  meta(name='viewport', content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet', href='../stylesheets/style.css')
+  script(src='/socket.io/socket.io.js')
+  script(src='js/chat.js')
+  title 
+body
+    .wrap
+        .side_bar
+            .main_logo
+            span.side_contents IT SHOW
+            .main_menu
+            span.side_contents Main menu
+            .profile
+            span.side_contents Profile
+            .logout
+            span.side_contents Logout
+            button 
                 a(href="/room_exit") exit
-        div(id = 'chat-main')
-            div(id = 'chat')
-            div
-                input(type="text" id ="test")
-                button(onclick="send()") send
+               
+            .access_list
+            span.side_contents Access list
+        .screen
+            span.screen__ Screen
+        .chat
+            .chat_message
+            .live_chat
+                span.live_chat_title
+                | chat
+            #chat.live_chat_text
+            .input_line
+                input#test.input_line__(type='text', placeholder='input message')
+                br
+                button(onclick='send()') send
 
-            script(src="/socket.io/socket.io.js")
-            script.
-                const socket = io();
-                const room = '!{room}';
-                const name = `!{user}`;
-                socket.on('connect', ()=> {
-                    socket.emit('joinroom', {room: '!{room}'});
-                    const data = {name : name, room: '!{room}'};
-                    socket.emit('newUser', data);
-                });
+                    script(src="/socket.io/socket.io.js")
+                    script.
+                        const socket = io();
+                        const room = '!{room}';
+                        const name = `!{user}`;
+                        socket.on('connect', ()=> {
+                            socket.emit('joinroom', {room: '!{room}'});
+                            const data = {name : name, room: '!{room}'};
+                            socket.emit('newUser', data);
+                        });
 
-                socket.on('update',(data) => {
-                    const chat = document.getElementById('chat');
-                    const message = document.createElement('div');
-                    const node = document.createTextNode(`${data.name} : ${data.message}`);
-                    let className = '';
-                    switch(data.type) {
-                        case 'message':
-                        className = 'other'
-                        break
+                        socket.on('update',(data) => {
+                            const chat = document.getElementById('chat');
+                            const message = document.createElement('div');
+                            const node = document.createTextNode(`${data.name} : ${data.message}`);
+                            let className = 'you';
+                            //- switch(data.type) {
+                            //-     case 'message':
+                            //-     className = 'other'
+                            //-     break
 
-                        case 'connect':
-                        className = 'connect'
-                        break
+                            //-     case 'connect':
+                            //-     className = 'connect'
+                            //-     break
 
-                        case 'disconnect':
-                        className = 'disconnect'
-                        break
-                    }
-                    message.classList.add(className);
-                    message.appendChild(node);
-                    chat.appendChild(message);
-                });
+                            //-     case 'disconnect':
+                            //-     className = 'disconnect'
+                            //-     break
+                            //- }
+                            message.classList.add(className);
+                            message.appendChild(node);
+                            chat.appendChild(message);
+                        });
 
 
-                function send() {
-                    let message = document.getElementById('test').value;
-                    document.getElementById('test').value = '';
-                    var chat = document.getElementById('chat')
-                    var msg = document.createElement('div');
-                    var node = document.createTextNode(message);
-                    msg.classList.add('me');
-                    msg.appendChild(node);
-                    chat.appendChild(msg);
-                    socket.emit('message',{type : 'message', message : message, room : room});
-                };
+                        function send() {
+                            let message = document.getElementById('test').value;
+                            document.getElementById('test').value = '';
+                            var chat = document.getElementById('chat')
+                            var msg = document.createElement('div');
+                            var node = document.createTextNode(message);
+                            msg.classList.add('me');
+                            msg.appendChild(node);
+                            chat.appendChild(msg);
+                            socket.emit('message',{type : 'message', message : message, room : room});
+                        };
